@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #28156c;
+    align-items: center;
+
+    .container{
+        width: 900px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        /* background-color: rgba(50, 99, 222, 0.7); */
+        background-color: #6346cd;
+        /* backdrop-filter: blur(80px); */
+        position: relative;
+        font-family: "Playwrite GB S", serif;
+
+        header{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h1{
+                font-size: 3rem;
+                color: #fff;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+            #addbtns{
+                padding: 5px 15px;
+                font-size: 1.1rem;
+                font-family: "Playwrite GB S", serif;
+                border: none;
+                border-radius: 10px;
+                outline: none;
+            }
+            #addbtns:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+                transition-duration:1.5s ;
+                background-color: #b6b2b2;
+            }
+        }
+
+        main{
+            width: 100%;
+            border: 2px solid red;
+            display: flex;
+            justify-content: center;
+
+            .table{
+                width: 95%;
+                border: 2px solid black;
+                text-align: center;
+                thead{
+                    width: 100%;
+                    border: 2px solid green;
+                }
+                .thead tr{
+                    font-size: 1.7rem;
+                    background-color: green;
+                    color: #fff;
+                }
+                .tbody tr{
+                    background-color: yellow;
+                    font-size: 1.2rem;
+
+                    .update{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                    }
+                    .update :first-child{
+                        color: green;
+                    }
+                    .update :last-child{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    .container::before{
+        content: "";
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        right: -50px;
+        bottom: -70px;
+        background-color: yellow;
+        z-index: -1;
+    }
+    .container::after{
+        content: "";
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        left: -50px;
+        top: -70px;
+        background-color: rgb(239, 54, 54);
+        z-index: -1;
+    }
+}
+.apply{
+    width: 400px;
+    height: 430px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    gap: 1rem;
+    transition-duration: 1s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+    display: none;
+
+    background-color: #9EA3AA;
+    font-family: "Playwrite GB S", serif;
+    /* opacity: 10%; */
+    animation: start 0.7s ease-in  1 forwards ;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    h1{
+        text-align: center;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input,select{
+            outline: none;
+            font-size: 1.1rem;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            font-family: "Playwrite GB S", serif;
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+
+            .same{
+                padding: 5px 20px;
+                border: none;
+                font-size: 1.2rem;
+                border-radius: 10px;
+                outline: none;
+                font-family: "Playwrite GB S", serif;
+
+            }
+            .same:hover{
+                cursor: pointer;
+                background-color: #b9b4b4;
+                transform: scale(1.1);
+                transition-duration: 1s;
+            }
+        }
+    }
+}
+@keyframes start {
+    0%{
+        top: -100%;
+        right: 0%;
+    }
+    100%{
+        top: 50%;
+        left: 50%;
+    }
+}
+

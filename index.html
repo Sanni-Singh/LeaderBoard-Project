@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeaderBoard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LeaderBoard</h1>
+            <button id="addbtns">Add Member</button>
+        </header>
+        <main>
+            <table class="table">
+                <thead class="thead">
+                    <tr>
+                        <th>Rank</th>
+                        <th>Full Name</th>
+                        <th>Score</th>
+                        <th>Country</th>
+                        <th>Edit</th>
+                    </tr>
+                    
+                </thead>
+                <tbody class="tableBody"></tbody>
+                <!-- <tbody class="tbody">
+                    <tr>
+                        <td>1</td>
+                        <td>sanniKumar</td>
+                        <td>100</td>
+                        <td>India</td>
+                        <td class="update">
+                            <span>+5</span>
+                            <span><img src="./icon/del.svg" alt=""></span>
+                            <span>-5</span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="tbody">
+                    <tr>
+                        <td>1</td>
+                        <td>sanniKumar</td>
+                        <td>100</td>
+                        <td>India</td>
+                        <td class="update">
+                            <span>+5</span>
+                            <span><img src="./icon/del.svg" alt=""></span>
+                            <span>-5</span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="tbody">
+                    <tr>
+                        <td>1</td>
+                        <td>sanniKumar</td>
+                        <td>100</td>
+                        <td>India</td>
+                        <td class="update">
+                            <span>+5</span>
+                            <span><img src="./icon/del.svg" alt=""></span>
+                            <span>-5</span>
+                        </td>
+                    </tr>
+                </tbody> -->
+            </table>
+        </main>
+    </div>
+    <div class="apply">
+        <h1>Add New Students</h1>
+        <form id="myForm">
+            <input type="text" name="" id="fname" placeholder="First Name">
+            <input type="text" name="" id="lname" placeholder="Last Name">
+            <select name="" id="select">
+                <option value="">Select Your Country</option>
+                <option value="India">India</option>
+                <option value="England">England</option>
+                <option value="Japan">Japan</option>
+                <option value="China">China</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Russia">Russia</option>
+                <option value="Canada">Canada</option>
+            </select>
+            <input type="number" placeholder="Score" id="number">
+            <div class="button">
+                <button id="addMember" type="submit" class="same">Add Student</button>
+                <button id="close" type="button" class="same">Close</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

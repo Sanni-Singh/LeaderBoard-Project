@@ -13,7 +13,7 @@ let arr= [
     {
         rank :"",
         Fname:`Sanni Singh`,
-        score: 120,
+        score: 180,
         countrys:"India",
     },
     {
@@ -52,7 +52,7 @@ function displayCart(){
                 <td>${ele.countrys}</td>
                 <td class="update">
                     <span class="span1" data-index=${index} >+5</span>
-                    <span class="span2" ><img class="span2" src="./icon/del.svg" alt=""></span>
+                    <span class="span2" ><img class="span2 " src="./icon/del.svg" alt=""></span>
                     <span class="span3" >-5</span>
                 </td>
             </tr>

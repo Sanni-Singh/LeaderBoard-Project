@@ -29,7 +29,7 @@ body{
         gap: 1rem;
         /* background-color: rgba(50, 99, 222, 0.6); */
         background-color: rgba(50, 99, 222, 0.11);
-        /* backdrop-filter: blur(-40px); */
+        /* backdrop-filter: blur(40px); */
         position: relative;
         font-family: "Playwrite GB S", serif;
 
@@ -52,7 +52,7 @@ body{
             align-items: center;
             h1{
                 font-size: 3rem;
-                color: orangered;
+                color: white;
                 font-weight: 900;
                 text-transform: uppercase;
 
@@ -67,6 +67,7 @@ body{
                 padding: 5px 15px;
                 font-size: 1.1rem;
                 font-family: "Playwrite GB S", serif;
+                font-weight: 900;
                 border: none;
                 border-radius: 10px;
                 outline: none;
@@ -135,6 +136,12 @@ body{
                         align-items: center;
                         text-align: center;
                         cursor: pointer;
+                        /* background-color: red; */
+
+                        .span2{
+                            width: 21px;
+
+                        }
                     }
                     .update :first-child{
                         color: green;

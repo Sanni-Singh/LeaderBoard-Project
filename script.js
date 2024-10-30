@@ -9,30 +9,57 @@ const addMember = document.querySelector('#addMember');
 const close = document.querySelector('#close');
 const tableBody = document.querySelector('.tableBody');
 
-let arr= [];
+let arr= [
+    {
+        rank :"",
+        Fname:`Sanni Singh`,
+        score: 120,
+        countrys:"India",
+    },
+    {
+        rank :"",
+        Fname:`Yash Sainani`,
+        score: 140,
+        countrys:"India",
+    },
+    {
+        rank :"",
+        Fname:`Vivek Nag`,
+        score: 160,
+        countrys:"India",
+    },
+    {
+        rank :"",
+        Fname:`Aakash Rathore`,
+        score: 180,
+        countrys:"India",
+    },
+];
 
 function displayCart(){
     arr.sort((a,b)=>{
         return b.score - a.score;
     });
 
-    console.log(arr);
+    // console.log(arr);
     let val="";
     arr.forEach((ele , index)=>{
         val += `
-            <tr>
-                <td>1</td>
+            <tr class="row">
+                <td>${index + 1}</td>
                 <td>${ele.Fname}</td>
                 <td>${ele.score}</td>
                 <td>${ele.countrys}</td>
                 <td class="update">
                     <span class="span1" data-index=${index} >+5</span>
-                    <span class="span2" ><img src="./icon/del.svg" alt=""></span>
+                    <span class="span2" ><img class="span2" src="./icon/del.svg" alt=""></span>
                     <span class="span3" >-5</span>
                 </td>
             </tr>
         `
-        tableBody.innerHTML=val;
+        // console.log(val);
+        
+        
         // let tbody = document.createElement('tbody');
         //     tbody.className = "tbody"
         // let tr = document.createElement('tr');
@@ -77,22 +104,34 @@ function displayCart(){
         // tbody.append(tr);
         // table.append(tbody)
     })
-    
+        tableBody.innerHTML=val;
+        // console.log(document.querySelector('.tableBody'));
+        activeBtn();
 }
 function activeBtn(){
     
-    document.querySelectorAll('.tableBody').
+    // console.log(document.querySelectorAll('.row'))
+    document.querySelectorAll('.row').
     forEach((item , index)=>{
         
         item.addEventListener('click',(e)=>{
 
-             console.log(e.target.getE)
+             
+             
             
             if(e.target.classList.contains("span1")){
-                
-            console.log(index);
                 let datas = Number(arr[index].score);
                 datas += 5;
+                arr[index].score= datas
+                displayCart()
+            }
+             if(e.target.classList.contains("span2")) {
+                arr.splice(index , 1);
+                displayCart();
+            }
+             if(e.target.classList.contains("span3")){
+                let datas = Number(arr[index].score);
+                datas -= 5;
                 arr[index].score= datas
                 displayCart()
             }
@@ -100,7 +139,7 @@ function activeBtn(){
         })
     })
 }
-
+window.addEventListener('load',displayCart)
 btn.addEventListener('click',()=>{
     container.style.opacity="10%";
     apply.style.display="flex";
@@ -109,25 +148,14 @@ btn.addEventListener('click',()=>{
 
 function invoke(e){
         e.preventDefault();
-        console.log("hellow");
-        console.log(select.value);
         
-        if(!fname.value || !lname.value || !number.value){
-            apply.animate([
-                {transform: 'translateX(4px)'},
-                {transform: 'translateX(0)'},
-                {transform: 'translateX(4px)'},
-                {transform: 'translateX(0)'}
-            ], {
-                duration: 200,
-                easing: 'ease-in-out',
-                iterations: 4
-            });
+        if(!fname.value || !lname.value || !number.value || !select.value){
+            alert("Fill the field properly....")
             return;
         }
         else {
             let student = {
-                rank : 1,
+                rank :"",
                 Fname:`${fname.value} ${lname.value}`,
                 score: number.value,
                 countrys:select.value,
@@ -139,10 +167,8 @@ function invoke(e){
         fname.value=""
         lname.value=""
         select.value=""
-        select.value=""
         number.value="";
         apply.style.display="none"
-        activeBtn();
         
         container.style.opacity="1";
 
@@ -151,6 +177,10 @@ function invoke(e){
 close.addEventListener('click',()=>{
     apply.style.display="none"
     container.style.opacity="1";
+    fname.value=""
+    lname.value=""
+    select.value=""
+    number.value="";
     // displayCart();
 })
 document.getElementById('myForm').addEventListener('submit',invoke)

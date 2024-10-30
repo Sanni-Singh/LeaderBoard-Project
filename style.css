@@ -12,6 +12,14 @@ body{
     position: relative;
     background-color: #28156c;
     align-items: center;
+    overflow: hidden;
+
+    @media screen and (max-width:600px) {
+        margin:  0 auto;
+    }
+    @media screen and (max-width:400px) {
+        margin:  0 auto;
+    }
 
     .container{
         width: 900px;
@@ -19,11 +27,23 @@ body{
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        /* background-color: rgba(50, 99, 222, 0.7); */
-        background-color: #6346cd;
-        /* backdrop-filter: blur(80px); */
+        /* background-color: rgba(50, 99, 222, 0.6); */
+        background-color: rgba(50, 99, 222, 0.11);
+        /* backdrop-filter: blur(-40px); */
         position: relative;
         font-family: "Playwrite GB S", serif;
+
+        @media screen and (max-width:1050px) {
+            width: 80%;
+        }
+        @media screen and (max-width:600px) {
+            width: 90%;
+            margin:  0 auto;
+        }
+        @media screen and (max-width:400px) {
+            /* width: 100%; */
+            /* margin:  0 auto; */
+        }
 
         header{
             width: 100%;
@@ -32,9 +52,16 @@ body{
             align-items: center;
             h1{
                 font-size: 3rem;
-                color: #fff;
+                color: orangered;
                 font-weight: 900;
                 text-transform: uppercase;
+
+                @media screen and (max-width:700px) {
+                    font-size: 2rem;
+                }
+                @media screen and (max-width:500px) {
+                    font-size: 1.5rem;
+                }
             }
             #addbtns{
                 padding: 5px 15px;
@@ -43,6 +70,15 @@ body{
                 border: none;
                 border-radius: 10px;
                 outline: none;
+
+                @media screen and (max-width:500px) {
+                    padding: 5px 10px;
+                    font-size: 1rem;
+                }
+                @media screen and (max-width:400px) {
+                    padding: 5px 5px;
+                    font-size: 13px;
+                }
             }
             #addbtns:hover{
                 transform: scale(1.1);
@@ -54,37 +90,60 @@ body{
 
         main{
             width: 100%;
-            border: 2px solid red;
             display: flex;
             justify-content: center;
 
             .table{
                 width: 95%;
-                border: 2px solid black;
                 text-align: center;
+
                 thead{
                     width: 100%;
-                    border: 2px solid green;
                 }
                 .thead tr{
                     font-size: 1.7rem;
-                    background-color: green;
                     color: #fff;
+
+                    @media screen and (max-width:700px) {
+                        font-size: 1.5rem;
+                    }
+                    @media screen and (max-width:500px) {
+                        font-size: 15px;
+                    }
+                    @media screen and (max-width:340px) {
+                        font-size: 12px;
+                    }
                 }
-                .tbody tr{
-                    background-color: yellow;
-                    font-size: 1.2rem;
+                .tableBody{
+
+                    .row{
+                        color: #fff;
+                        font-size: 1.2rem;
+                        border: 2px solid white;
+
+                        @media screen and (max-width:700px) {
+                            font-size: 1rem;
+                        }
+                        @media screen and (max-width:500px) {
+                            font-size: 10px;
+                        }
+                    }
 
                     .update{
                         display: flex;
                         justify-content: space-around;
                         align-items: center;
+                        text-align: center;
+                        cursor: pointer;
                     }
                     .update :first-child{
                         color: green;
+                        font-weight: 900;
                     }
                     .update :last-child{
                         color: red;
+                        /* font-size: 2rem; */
+                        font-weight: 900;
                     }
                 }
             }
@@ -95,20 +154,39 @@ body{
         width: 180px;
         height: 180px;
         position: absolute;
-        right: -50px;
+        right: -70px;
         bottom: -70px;
+        box-shadow: -73px -54px 44px -8px rgba(230,216,23,1);
         background-color: yellow;
+
         z-index: -1;
+
+        @media screen and (max-width:400px) {
+            width: 80px;
+        height: 80px;
+        right: -0;
+        bottom: -0;
+        }
     }
     .container::after{
         content: "";
         width: 180px;
         height: 180px;
         position: absolute;
-        left: -50px;
+        left: -70px;
         top: -70px;
-        background-color: rgb(239, 54, 54);
+        box-shadow: 61px 71px 44px -8px rgba(230,23,23,1);
+        background-color: red;
+
         z-index: -1;
+
+        @media screen and (max-width:400px) {
+            width: 80px;
+        height: 80px;
+        left: -00px;
+        top: -00px;
+        
+        }
     }
 }
 .apply{
@@ -132,10 +210,18 @@ body{
     background-color: #9EA3AA;
     font-family: "Playwrite GB S", serif;
     /* opacity: 10%; */
-    animation: start 0.7s ease-in  1 forwards ;
+    animation: start 0.5s linear  1 forwards ;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+    @media screen and (max-width:400px) {
+        width: 90%;
+    }
     h1{
         text-align: center;
+
+        @media screen and (max-width:400px) {
+            font-size: 1.2rem;
+        }
     }
     form{
         display: flex;
@@ -149,6 +235,10 @@ body{
             border-radius: 5px;
             border: none;
             font-family: "Playwrite GB S", serif;
+
+            @media screen and (max-width:400px) {
+                font-size: 15px;
+            }
         }
         .button{
             display: flex;
@@ -164,6 +254,11 @@ body{
                 outline: none;
                 font-family: "Playwrite GB S", serif;
 
+                @media screen and (max-width:400px) {
+                    padding: 5px 10px;
+                    font-size: 15px;
+                }
+
             }
             .same:hover{
                 cursor: pointer;
@@ -176,7 +271,7 @@ body{
 }
 @keyframes start {
     0%{
-        top: -100%;
+        top: -0%;
         right: 0%;
     }
     100%{
@@ -184,4 +279,3 @@ body{
         left: 50%;
     }
 }
-
